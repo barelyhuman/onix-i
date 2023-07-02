@@ -1,0 +1,24 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "TillWhen - Just Time Tracking",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "/",
+  "short_name": "TillWhen ",
+  "theme_color": "#faf4ed",
+  "description": "",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/logo-light.png",
+      "sizes": "1000x1000"
+    }
+  ],
+  "url": "https://tillwhen.barelyhuman.dev",
+  "screenshots": [],
+  "generated": "true"
+}
