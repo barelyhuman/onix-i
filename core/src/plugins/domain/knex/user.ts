@@ -11,3 +11,11 @@ export const fetchUserById = (db: Knex, id: number) => {
       'users.email'
     )
 }
+
+export const createProfile = (db: Knex, email: string, name?: string) => {
+  return db('profile').insert({ email, name }).returning(['id'])
+}
+
+export const updateProfile = (db: Knex, email: string, name: string) => {
+  return db('profile').update({ name }).where({ email }).returning(['id'])
+}

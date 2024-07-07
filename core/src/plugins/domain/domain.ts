@@ -1,5 +1,5 @@
 import fp from 'fastify-plugin'
-import { fetchUserById } from './knex/user'
+import { fetchUserById, createProfile } from './knex/user'
 
 export type Domain = ReturnType<typeof getDomain>
 
@@ -7,6 +7,7 @@ function getDomain(fastify) {
   return {
     user: {
       fetchUserById: (id: number) => fetchUserById(fastify.knex, id),
+      createUser: () => createProfile()
     },
   }
 }
