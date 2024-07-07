@@ -1,10 +1,10 @@
-import underPressure from '@fastify/under-pressure'
 import Fastify from 'fastify'
-import noIcon from 'fastify-no-icon'
-import { config } from './config'
-import routerPlugin from './plugins/routes'
-import db from './plugins/db'
-import domain from './plugins/domain/domain'
+import underPressure from '@fastify/under-pressure'
+import noIconPlugin from 'fastify-no-icon'
+import { config } from './config.js'
+import routerPlugin from './plugins/routes.js'
+import db from './plugins/db.js'
+import domain from './plugins/domain/domain.js'
 
 export function createServer() {
   const server = Fastify({
@@ -24,8 +24,7 @@ export function createServer() {
     maxEventLoopUtilization: 0.98,
   })
 
-  server.register(noIcon)
-
+  server.register(noIconPlugin.default)
   return server
 }
 

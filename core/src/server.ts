@@ -1,4 +1,4 @@
-import { createServer } from './app'
+import { createServer } from './app.js'
 
 function main() {
   const app = createServer()
@@ -9,6 +9,16 @@ function main() {
     }
     app.log.info('http://127.0.0.1:8000/foo')
   })
+
+  if (import.meta.hot) {
+    import.meta.hot.on('vite:beforeFullReload', async () => {
+      await app.close()
+    })
+
+    import.meta.hot.dispose(async () => {
+      await app.close()
+    })
+  }
 }
 
 main()

@@ -1,5 +1,8 @@
 // Update with your config settings.
 
+/**
+ *@type {Record<string,import("knex".Knex.Config)>}
+ **/
 export default {
   development: {
     client: 'postgresql',

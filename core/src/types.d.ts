@@ -1,7 +1,6 @@
-import { auth } from 'firebase-admin'
-import { Config } from './config'
+import { Config } from './config.js'
 import { Knex } from 'knex'
-import { Domain } from './plugins/domain/domain'
+import { Domain } from './plugins/domain/domain.js'
 
 declare module 'fastify' {
   interface FastifyInstance {
