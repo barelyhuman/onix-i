@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:13
+    image: postgres:13-alpine
     env_file:
       - .env
     ports:

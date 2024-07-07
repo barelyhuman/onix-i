@@ -124,9 +124,6 @@ devDependencies:
   husky:
     specifier: ^8.0.3
     version: 8.0.3
-  knex-to-dbml:
-    specifier: ^0.0.4
-    version: 0.0.4
   lint-staged:
     specifier: ^13.2.3
     version: 13.2.3
@@ -449,6 +446,7 @@ packages:
 
   /@jridgewell/source-map@0.3.4:
     resolution: {integrity: sha512-KE/SxsDqNs3rrWwFHcRh15ZLVFrI0YoZtgAdIyIq9k5hUNmiWRXXThPomIxHuL20sLdgzbDFyvkUMna14bvtrw==}
+    deprecated: the version has a bug with typescript type resolution
 
   /@jridgewell/sourcemap-codec@1.4.14:
     resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==}
@@ -2732,19 +2730,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /knex-schema-inspector@3.0.1:
-    resolution: {integrity: sha512-ofglN/HoHYhNxQJbuuKEj0vtVsBpEVlbvfoFd9lPn1ABzJHdwZmKLquCYbVLTXZIN0O6y6DDEuN4EqBKMhH+xQ==}
-    dependencies:
-      lodash.flatten: 4.4.0
-      lodash.isnil: 4.0.0
-    dev: true
-
-  /knex-to-dbml@0.0.4:
-    resolution: {integrity: sha512-LsjiyN8TEBEEfsUmhQqKJySw2E6so+zzKBVZnkEULA7qkiRj9+k2bRgD3IF5lXctATt4+MPuKKN4ChUYxVzY6A==}
-    dependencies:
-      knex-schema-inspector: 3.0.1
-    dev: true
-
   /knex@2.4.2(pg@8.11.1):
     resolution: {integrity: sha512-tMI1M7a+xwHhPxjbl/H9K1kHX+VncEYcvCx5K00M16bWvpYPKAZd6QrCu68PtHAdIZNQPWZn0GVhqVBEthGWCg==}
     engines: {node: '>=12'}
@@ -2862,14 +2847,6 @@ packages:
   /lodash._reinterpolate@3.0.0:
     resolution: {integrity: sha512-xYHt68QRoYGjeeM/XOE1uJtvXQAgvszfBhjV4yvsQH0u2i9I6cI6c6/eG4Hh3UAOVn0y/xAXwmTzEay49Q//HA==}
     dev: false
-
-  /lodash.flatten@4.4.0:
-    resolution: {integrity: sha512-C5N2Z3DgnnKr0LOpv/hKCgKdb7ZZwafIrsesve6lmzvZIRZRGaZ/l6Q8+2W7NaT+ZwO3fFlSCzCzrDCFdJfZ4g==}
-    dev: true
-
-  /lodash.isnil@4.0.0:
-    resolution: {integrity: sha512-up2Mzq3545mwVnMhTDMdfoG1OurpA/s5t88JmQX809eH3C8491iu2sfKhTfhQtKY78oPNhiaHJUpT/dUDAAtng==}
-    dev: true
 
   /lodash.sortby@4.7.0:
     resolution: {integrity: sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==}
