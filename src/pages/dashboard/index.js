@@ -250,7 +250,7 @@ const Dashboard = () => {
                   </div>
                   <Spacer y={1} x={1} inline />
                   <div className="font-20 text-center">
-                    {`${formatTimeSpent(item.totalTimeSpent * 1000)} `} <br />
+                    {`${formatTimeSpent(item.totalTime * 1000)} `} <br />
                     <span className="grey">
                       <small>Total Time Spent</small>
                     </span>
