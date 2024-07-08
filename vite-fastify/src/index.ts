@@ -6,6 +6,7 @@
 
 import { Plugin } from 'vite'
 import type { FastifyInstance } from 'fastify'
+import { mergeConfig } from 'vite'
 
 export function viteFastify(): Plugin {
   return {
@@ -17,20 +18,23 @@ export function viteFastify(): Plugin {
         host = JSON.parse(_config.define?.['process.env.HOST'])
         port = JSON.parse(_config.define?.['process.env.PORT'])
       }
-      return Object.assign(_config, {
-        server: {
-          host,
-          port,
-        },
-        build: {
-          ssr: true,
-          rollupOptions: {
-            input: {
-              server: './src/server.ts',
+      return mergeConfig(
+        {
+          server: {
+            host,
+            port,
+          },
+          build: {
+            ssr: true,
+            rollupOptions: {
+              input: {
+                server: './src/server.ts',
+              },
             },
           },
         },
-      })
+        _config
+      )
     },
     configureServer(server) {
       server.middlewares.use(async function (req, res) {
