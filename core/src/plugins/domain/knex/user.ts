@@ -1,6 +1,7 @@
 import type { Knex } from 'knex'
+import { curry } from '~/lib/array.js'
 
-export const fetchUserById = (db: Knex, id: number) => {
+export const fetchUserById = curry((db: Knex, id: number) => {
   return db('users')
     .leftJoin('profiles as profile', 'users.id', 'profile.user_id')
     .where('users.id', id)
@@ -10,22 +11,19 @@ export const fetchUserById = (db: Knex, id: number) => {
       'users.id ',
       'users.email'
     )
-}
+})
 
-export const createProfile = (db: Knex, email: string, name?: string) => {
+export const createProfile = curry((db: Knex, email: string, name?: string) => {
   return db('profile').insert({ email, name }).returning(['id'])
-}
+})
 
-export const updateProfile = (
-  db: Knex,
-  id: number,
-  email: string,
-  name: string
-) => {
-  return db('profile').update({ name, email }).where({ id }).returning(['id'])
-}
+export const updateProfile = curry(
+  (db: Knex, id: number, email: string, name: string) => {
+    return db('profile').update({ name, email }).where({ id }).returning(['id'])
+  }
+)
 
-export const searchUsers = async (db: Knex, searchTerm: string) => {
+export const searchUsers = curry(async (db: Knex, searchTerm: string) => {
   const normalisedSearchTerm = `%${searchTerm.replace(/\s*/g, '%')}%`
 
   const users = await db('users')
@@ -35,8 +33,8 @@ export const searchUsers = async (db: Knex, searchTerm: string) => {
     .select('users.email', 'users.id', 'profiles.name as profile_name')
 
   return users
-}
+})
 
-export const deleteUser = (db: Knex, id: string) => {
+export const deleteUser = curry((db: Knex, id: string) => {
   return db('users').where({ id }).del()
-}
+})

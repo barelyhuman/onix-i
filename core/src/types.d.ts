@@ -9,3 +9,5 @@ declare module 'fastify' {
     domain: Domain
   }
 }
+
+export type Maybe<T> = T | undefined
