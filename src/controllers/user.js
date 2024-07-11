@@ -6,7 +6,7 @@ import { nestie } from 'nestie'
 const controller = {
   name: 'UserController',
 }
-export default controller
+
 
 controller.fetchUser = async (req, res) => {
   try {
@@ -191,3 +191,5 @@ export async function getActiveUserCount() {
 
   return userCount
 }
+
+export default controller

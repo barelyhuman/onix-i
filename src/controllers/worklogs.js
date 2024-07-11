@@ -38,4 +38,4 @@ controller.getTaskLogsForDate = async (req, res) => {
   }
 }
 
-module.exports = controller
+export default controller;

@@ -6,7 +6,7 @@ const controller = {
   name: 'ProjectsController',
 }
 
-export default controller
+
 
 controller.fetchProjects = async (req, res) => {
   try {
@@ -643,3 +643,5 @@ export const fetchProjectById = async function (userId, id) {
   }
   return await db('projects').where({ id }).first()
 }
+
+export default controller

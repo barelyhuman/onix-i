@@ -10,7 +10,7 @@ const UnauthorizedRequest = res => {
   )
 }
 
-module.exports = forRoles => async (req, res, next) => {
+export default forRoles => async (req, res, next) => {
   try {
     const { currentUser } = req
 

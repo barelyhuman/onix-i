@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 
-module.exports = {
+export default {
   hash(stringPassword) {
     const salt = bcrypt.genSaltSync()
     return bcrypt.hashSync(stringPassword, salt)
@@ -8,4 +8,4 @@ module.exports = {
   compare(stringPassword, hashedPassword) {
     return bcrypt.compareSync(stringPassword, hashedPassword)
   },
-}
+};

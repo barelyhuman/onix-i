@@ -163,4 +163,4 @@ controller.createLog = async ({ req, res }) => {
   } catch (err) {}
 }
 
-module.exports = controller
+export default controller;
